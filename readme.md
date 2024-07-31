@@ -76,6 +76,8 @@ Utilizamos a Clean Architecture para o desenvolvimento, focando na separação e
 
     Abra seu navegador e acesse `http://localhost:30010/api-docs` para visualizar a documentação da API.
 
+    Também temos a opção de executar via postman, importando a collection: tech_challenge.postman_collection.json
+
 ## Estrutura do Projeto
 
 ```plaintext
