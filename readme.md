@@ -123,5 +123,5 @@ Utilizamos a Clean Architecture para o desenvolvimento, focando na separação e
 |-- package-lock.json
 |-- package.json
 `-- readme.md
-
+```
 <img align="center" src="https://github.com/CarlosLopes88/tech_challenge_2_fase/blob/6207ae908916d6c4b9ee729fb48f3eb453e159d6/arquitetura_k8s.png">
