@@ -82,12 +82,23 @@ Utilizamos a Clean Architecture para o desenvolvimento, focando na separação e
     ```
     A colection possui todas as funcionalidades mas separei uma pasta chamada teste_fase_2:
 
-   - **1-novo cliente 1**: Ambiente de execução JavaScript no servidor.
-   - **Express**: Framework web para Node.js.
-   - **MongoDB**: Banco de dados NoSQL para armazenamento de dados.
-   - **Mongoose**: ODM para MongoDB.
-   - **Swagger UI**: Para documentação interativa da API.
-   - **Docker** e **Kubernetes**: Para contêinerização e gerenciamento de ambientes.
+   - **1 - novo cliente 1**: Criação de um novo cliente;
+   - **2 - consulta lista de clientes teste**: Consulta da criação do cliente;
+   - **3 - novos produtos teste**: Criar os novos produtos (Hamburguer, Refrigerante, Fritas e Sobremesa);
+   - **4 -novo pedido 1 (Recebido)**: Com o Id do cliente e Id do produto criar um novo pedido;
+   - **5 - Sol. pagamento pedido 1**: com o Id do pedido solicitar o QRCode do Pagseguro;
+   - **6 - webhook pedido 1**: Com o Id do pedido chamar nosso webhook para capturar o status do pagamento;
+   - **7 -novo pedido 2 (em preparação)**: Com o Id do cliente e Id do produto criar um novo pedido;
+   - **8 - Sol. pagamento pedido 2**: com o Id do pedido solicitar o QRCode do Pagseguro;
+   - **9 - webhook pedido 2**: Com o Id do pedido chamar nosso webhook para capturar o status do pagamento;
+   - **10 - alteração de status pedido 2 (em preparação)**: Alterar o status do pedido para Em Preparação;
+   - **11 -novo pedido 3 (Pronto)**: Com o Id do cliente e Id do produto criar um novo pedido;
+   - **12 -Sol.  pagamento pedido 3**: com o Id do pedido solicitar o QRCode do Pagseguro;
+   - **13 - webhook pedido 3**: Com o Id do pedido chamar nosso webhook para capturar o status do pagamento;
+   - **14 - alteração de status pedido 3 (em preparação)**: Alterar o status do pedido para Em Preparação;
+   - **15 - alteração de status pedido 3 (Pronto)**: Alterar o status do pedido para Pronto;
+   - **16 - alteração de status pedido 3 (Finalizado)**: Alterar o status do pedido para Finalizado;
+   - **17 - consulta pedido filtro fase 2**: Para documentação interativa da API.
 
 ## Estrutura do Projeto
 
