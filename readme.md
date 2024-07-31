@@ -76,7 +76,10 @@ Utilizamos a Clean Architecture para o desenvolvimento, focando na separação e
 
     Abra seu navegador e acesse `http://localhost:30010/api-docs` para visualizar a documentação da API.
 
-    Também temos a opção de executar via postman, importando a collection: tech_challenge.postman_collection.json
+    Também temos a opção de executar via postman, importando a collection:
+    ```sh
+    tech_challenge.postman_collection.json
+    ```
 
 ## Estrutura do Projeto
 
@@ -122,6 +125,7 @@ Utilizamos a Clean Architecture para o desenvolvimento, focando na separação e
 |-- dockerfile
 |-- package-lock.json
 |-- package.json
+|-- tech_challenge.postman_collection.json
 `-- readme.md
 ```
 <img align="center" src="https://github.com/CarlosLopes88/tech_challenge_2_fase/blob/6207ae908916d6c4b9ee729fb48f3eb453e159d6/arquitetura_k8s.png">
