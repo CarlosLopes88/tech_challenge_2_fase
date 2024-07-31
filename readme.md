@@ -80,6 +80,14 @@ Utilizamos a Clean Architecture para o desenvolvimento, focando na separação e
     ```sh
     tech_challenge.postman_collection.json
     ```
+    A colection possui todas as funcionalidades mas separei uma pasta chamada teste_fase_2:
+
+   - **1-novo cliente 1**: Ambiente de execução JavaScript no servidor.
+   - **Express**: Framework web para Node.js.
+   - **MongoDB**: Banco de dados NoSQL para armazenamento de dados.
+   - **Mongoose**: ODM para MongoDB.
+   - **Swagger UI**: Para documentação interativa da API.
+   - **Docker** e **Kubernetes**: Para contêinerização e gerenciamento de ambientes.
 
 ## Estrutura do Projeto
 
