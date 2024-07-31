@@ -370,7 +370,7 @@
 					"response": []
 				},
 				{
-					"name": "3 - consulta lista de clientes teste",
+					"name": "2 - consulta lista de clientes teste",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -379,7 +379,7 @@
 					"response": []
 				},
 				{
-					"name": "4 - novos produtos teste",
+					"name": "3 - novos produtos teste",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -402,7 +402,7 @@
 					"response": []
 				},
 				{
-					"name": "5 -novo pedido 1 (Recebido)",
+					"name": "4 -novo pedido 1 (Recebido)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -425,7 +425,7 @@
 					"response": []
 				},
 				{
-					"name": "6 - Sol. pagamento pedido 1",
+					"name": "5 - Sol. pagamento pedido 1",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -448,7 +448,7 @@
 					"response": []
 				},
 				{
-					"name": "7 - webhook pedido 1",
+					"name": "6 - webhook pedido 1",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -471,7 +471,7 @@
 					"response": []
 				},
 				{
-					"name": "8 -novo pedido 2 (em preparação)",
+					"name": "7 -novo pedido 2 (em preparação)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -494,7 +494,7 @@
 					"response": []
 				},
 				{
-					"name": "9 - Sol. pagamento pedido 2",
+					"name": "8 - Sol. pagamento pedido 2",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -517,7 +517,7 @@
 					"response": []
 				},
 				{
-					"name": "10 - webhook pedido 2",
+					"name": "9 - webhook pedido 2",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -540,7 +540,7 @@
 					"response": []
 				},
 				{
-					"name": "11 - alteração de status pedido 2 (em preparação) Copy",
+					"name": "10 - alteração de status pedido 2 (em preparação)",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -563,7 +563,7 @@
 					"response": []
 				},
 				{
-					"name": "12 -novo pedido 3 (Pronto)",
+					"name": "11 -novo pedido 3 (Pronto)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -586,7 +586,7 @@
 					"response": []
 				},
 				{
-					"name": "13 -Sol.  pagamento pedido 3",
+					"name": "12 -Sol.  pagamento pedido 3",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -609,7 +609,7 @@
 					"response": []
 				},
 				{
-					"name": "14 - webhook pedido 3",
+					"name": "13 - webhook pedido 3",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -678,7 +678,7 @@
 					"response": []
 				},
 				{
-					"name": "15 - alteração de status pedido 3 (Finalizado)",
+					"name": "16 - alteração de status pedido 3 (Finalizado)",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -701,7 +701,7 @@
 					"response": []
 				},
 				{
-					"name": "16 - consulta pedido filtro fase 2",
+					"name": "17 - consulta pedido filtro fase 2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
