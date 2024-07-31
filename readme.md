@@ -6,6 +6,8 @@ Este projeto visa desenvolver um sistema de controle de pedidos para uma lanchon
 
 Utilizamos a Clean Architecture para o desenvolvimento, focando na separação entre o domínio de negócios e a infraestrutura, o que facilita a manutenção e a expansão do sistema.
 
+### [Link Miro Tech Chalenge Arquitetura K8S](https://miro.com/app/board/uXjVKR4zMmM=/)
+
 ## Funcionalidades
 
 - **Gerenciamento de Clientes**:
