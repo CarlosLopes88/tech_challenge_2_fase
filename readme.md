@@ -80,7 +80,7 @@ Utilizamos a Clean Architecture para o desenvolvimento, focando na separação e
     ```sh
     tech_challenge.postman_collection.json
     ```
-    A colection possui todas as funcionalidades mas separei uma pasta chamada teste_fase_2:
+    A colection possui todas as funcionalidades mas separei uma pasta chamada teste_fase_2 para auxiliar no teste da fase 2:
 
    - **1 - novo cliente 1**: Criação de um novo cliente;
    - **2 - consulta lista de clientes teste**: Consulta da criação do cliente;
