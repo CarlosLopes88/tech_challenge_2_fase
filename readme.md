@@ -8,6 +8,8 @@ Utilizamos a Clean Architecture para o desenvolvimento, focando na separação e
 
 ### [Link Miro Tech Chalenge Arquitetura K8S](https://miro.com/app/board/uXjVKR4zMmM=/)
 
+### [Link do videos](https://youtu.be/SlQVf8aG7I0)
+
 ## Funcionalidades
 
 - **Gerenciamento de Clientes**:
