@@ -122,6 +122,10 @@ Utilizamos a Clean Architecture para o desenvolvimento, focando na separação e
 |   |   |   |-- pagamento.js
 |   |   |   |-- pedido.js
 |   |   |   `-- produto.js
+|   |   |-- /repositoriesInterfaces
+|   |   |   |-- clienteRepositoryInterface.js
+|   |   |   |-- pedidoRepositoryInterface.js
+|   |   |   `-- produtoRepositoryInterface.js 
 |   |   |-- /use_cases
 |   |       |-- pagamentoServices.js
 |   |       `-- pedidoUseServices.js    
@@ -136,6 +140,10 @@ Utilizamos a Clean Architecture para o desenvolvimento, focando na separação e
 |   |   |   `-- web
 |   |   |       `-- server.js
 |   |-- /infrastructure
+|   |   |-- /http
+|   |   |   |-- pagamentoHttpClient.js
+|   |   |   |-- 
+|   |   |   `-- js
 |   |   |-- /repositories
 |   |   |   |-- clienteRepository.js
 |   |   |   |-- pedidoRepository.js
@@ -148,7 +156,6 @@ Utilizamos a Clean Architecture para o desenvolvimento, focando na separação e
 |-- dockerfile
 |-- package-lock.json
 |-- package.json
-|-- tech_challenge.postman_collection.json
 `-- readme.md
 ```
 <img align="center" src="https://github.com/CarlosLopes88/tech_challenge_2_fase/blob/6207ae908916d6c4b9ee729fb48f3eb453e159d6/arquitetura_k8s.png">

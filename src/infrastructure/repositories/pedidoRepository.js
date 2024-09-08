@@ -1,6 +1,7 @@
 const Pedido = require('../../core/domain/pedido');
+const PedidoRepositoryInterface = require('../../core/repositoriesInterfaces/pedidoRepositoryInterface');
 
-class PedidoRepository {
+class PedidoRepository extends PedidoRepositoryInterface {
     async addPedido(pedidoData) {
         const pedido = new Pedido(pedidoData);
         await pedido.save();
@@ -44,4 +45,4 @@ class PedidoRepository {
     }
 }
 
-module.exports = new PedidoRepository();
+module.exports = PedidoRepository;

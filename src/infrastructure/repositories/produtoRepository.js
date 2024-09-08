@@ -1,6 +1,7 @@
 const Produto = require('../../core/domain/produto');
+const ProdutoRepositoryInterface = require('../../core/repositoriesInterfaces/produtoRepositoryInterface');
 
-class ProdutoRepository {
+class ProdutoRepository extends ProdutoRepositoryInterface {
     async addProduto(produtoData) {
         const existingProduct = await Produto.findOne({ nomeProduto: produtoData.nomeProduto });
         if (existingProduct) {
@@ -32,4 +33,4 @@ class ProdutoRepository {
     }
 }
 
-module.exports = new ProdutoRepository();
+module.exports = ProdutoRepository;

@@ -1,6 +1,6 @@
 // Importa o modelo do Mongoose e a interface do repositório de cliente.
 const Cliente = require('../../core/domain/cliente'); // Modelo do Mongoose
-const ClienteRepositoryInterface = require('../../core/interfaces/clienteRepositoryInterface');
+const ClienteRepositoryInterface = require('../../core/repositoriesInterfaces/clienteRepositoryInterface');
 
 class ClienteRepository extends ClienteRepositoryInterface {
     /**
