@@ -4,19 +4,39 @@ const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const path = require('path');
 const db = require('../../../infrastructure/dbconnect');
-// Importação das rotas
-const clienteRoutes = require('../api/clienteRoutes');
-const pedidoRoutes = require('../api/pedidoRoutes');
-const produtoRoutes = require('../api/produtoRoutes');
-const pagamentoRoutes = require('../api/pagamentoRoutes');
-const webhookRoutes = require('../api/webhookRoutes');
 
+// Repositórios e clientes HTTP
+const ClienteRepository = require('../../infrastructure/repositories/clienteRepository');
+const PedidoRepository = require('../../infrastructure/repositories/pedidoRepository');
+const ProdutoRepository = require('../../infrastructure/repositories/produtoRepository');
+const PagamentoHttpClient = require('../../infrastructure/http/pagamentoHttpClient');
+
+// Casos de uso (use cases)
+const PagamentoService = require('../../core/use_cases/pagamentoService');
+const PedidoService = require('../../core/use_cases/pedidoUseServices');
+
+// Rotas
+const clienteRoutes = require('../interfaces/api/clienteRoutes');
+const pedidoRoutes = require('../interfaces/api/pedidoRoutes');
+const produtoRoutes = require('../interfaces/api/produtoRoutes');
+const pagamentoRoutes = require('../interfaces/api/pagamentoRoutes');
+const webhookRoutes = require('../interfaces/api/webhookRoutes');
+
+// Instanciando repositórios
+const clienteRepository = new ClienteRepository();
+const pedidoRepository = new PedidoRepository();
+const produtoRepository = new ProdutoRepository();
+const pagamentoHttpClient = new PagamentoHttpClient();
+
+// Injetando dependências nos casos de uso
+const pagamentoService = new PagamentoService(clienteRepository, pedidoRepository, pagamentoHttpClient);
+const pedidoService = new PedidoService(produtoRepository, pedidoRepository);
+
+// Inicialização do app Express
 const app = express();
-
-// Middleware para analisar o corpo das requisições
 app.use(bodyParser.json());
 
-// Configurações do CORS para permitir que o frontend acesse a API
+// Configurações de CORS
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -24,24 +44,22 @@ app.use((req, res, next) => {
     next();
 });
 
-// Conexão com o banco de dados e inicialização do servidor
+// Conexão com o MongoDB
 db.once('open', () => {
     console.log('Application Connected to MongoDB');
     const PORT = process.env.PORT || 3000;
 
-    // Carrega o arquivo OpenAPI YAML
-    const swaggerDocument = YAML.load(path.join(__dirname, '../../../../docs/openapi.yaml'))
-
-    // Middleware para servir a documentação Swagger UI
+    // Documentação Swagger
+    const swaggerDocument = YAML.load(path.join(__dirname, '../../../../docs/openapi.yaml'));
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-    // Rotas da aplicação
-    app.use('/api/cliente', clienteRoutes);
-    app.use('/api/pedido', pedidoRoutes);
-    app.use('/api/produto', produtoRoutes);
-    app.use('/api/pagamento', pagamentoRoutes);
-    app.use('/api/webhook', webhookRoutes);
+    // Rotas da aplicação, passando as instâncias dos casos de uso como middleware
+    app.use('/api/cliente', clienteRoutes(clienteRepository));
+    app.use('/api/pedido', pedidoRoutes(pedidoService));
+    app.use('/api/produto', produtoRoutes(produtoRepository));
+    app.use('/api/pagamento', pagamentoRoutes(pagamentoService));
+    app.use('/api/webhook', webhookRoutes());
 
-    // Inicia o servidor
+    // Iniciar o servidor
     app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
 });
