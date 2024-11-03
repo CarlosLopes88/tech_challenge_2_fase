@@ -1,14 +1,15 @@
-// Dependências
 class PagamentoService {
     /**
      * Construtor que recebe os repositórios injetados.
      * @param {Object} clienteRepository - Instância da interface ClienteRepositoryInterface.
      * @param {Object} pedidoRepository - Instância da interface PedidoRepositoryInterface.
+     * @param {Object} produtoRepository - Instância da interface ProdutoRepositoryInterface.
      * @param {Object} pagamentoHttpClient - Cliente HTTP para processar o pagamento (injetado).
      */
-    constructor(clienteRepository, pedidoRepository, pagamentoHttpClient) {
+    constructor(clienteRepository, pedidoRepository, produtoRepository, pagamentoHttpClient) {
         this.clienteRepository = clienteRepository;
         this.pedidoRepository = pedidoRepository;
+        this.produtoRepository = produtoRepository;
         this.pagamentoHttpClient = pagamentoHttpClient;
     }
 
@@ -63,7 +64,8 @@ class PagamentoService {
      */
     async _construirProdutos(produtosPedido) {
         const produtos = await Promise.all(produtosPedido.map(async (item) => {
-            const produto = await this.pedidoRepository.getProdutoByProdutoId(item.produto);
+            // Usa o produtoRepository para buscar os dados do produto
+            const produto = await this.produtoRepository.getProdutoByProdutoId(item.produto);
             return {
                 name: produto.nomeProduto,
                 quantity: item.quantidade,

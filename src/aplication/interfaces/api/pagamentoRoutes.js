@@ -1,6 +1,10 @@
 const express = require('express');
 
 module.exports = (pagamentoService) => {
+    if (!pagamentoService) {
+        throw new Error("pagamentoService é obrigatório para inicializar pagamentoRoutes");
+    }
+
     const router = express.Router();
 
     // Rota para criar pagamento
